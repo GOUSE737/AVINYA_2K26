@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JNTUHUCEM FEST 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffcc00;
+            --secondary: #00d2ff;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0a0a0c;
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #050505 100%);
+        }
+
+       
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .fest-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .college-name {
+            font-size: 1.2rem;
+            color: #ccc;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        .date-badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 20px;
+            background: var(--primary);
+            color: #000;
+            font-weight: bold;
+            border-radius: 50px;
+        }
+
+        
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        
+        .event-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .event-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .event-list li::before {
+            content: '🚀';
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+
+        .venue-info p {
+            margin-bottom: 5px;
+            color: #ddd;
+        }
+
+        
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .dev-tag {
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dev-name {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+      
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .glass-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="canvas-container">
+        <canvas id="neuralCanvas"></canvas>
+    </div>
+
+    <div class="content-wrapper">
+        <header>
+            <h1 class="fest-title">AVINYA 2026</h1>
+            <p class="college-name">JNTUHUCEM | CSE</p>
+            <div class="date-badge">MARCH 6 & 7</div>
+        </header>
+
+        <section class="glass-card">
+            <h2>Warm Welcome to All!</h2>
+            <p>We are proud to announce the grand college FEST at JNTUHUCEM. We warmly welcome students, faculty, and innovators from all over to join this celebration of technology, culture, and networking!</p>
+        </section>
+
+        <div class="grid-2">
+            <section class="glass-card">
+                <h3 style="color: var(--primary);">The Venue</h3>
+                <div class="venue-info">
+                    <p><strong>JNTUHUCEM</strong>, Block-1</p>
+                    <p>Centenary Colony, Pannur (V)</p>
+                    <p>Ramagiri (M), Peddapalli (D)</p>
+                    <p>Telangana - 505212</p>
+                </div>
+            </section>
+
+            <section class="glass-card">
+                <h3 style="color: var(--primary);">The Date</h3>
+                <p>Clear your schedules for two days of adrenaline-pumping events and tech-socializing.</p>
+                <p style="margin-top:10px; font-weight:bold;">Friday & Saturday</p>
+            </section>
+        </div>
+
+        <section class="glass-card">
+            <h2 style="text-align: center;">Inviting All Engineering Branches!</h2>
+            <p style="text-align: center; color: #bbb; margin-bottom: 20px;">CSE • CSM • EEE • ECE • MECHANICAL • CIVIL • MINING</p>
+            
+            <div class="grid-2">
+                <div>
+                    <h4 style="color: var(--primary);">✨ Technical Events</h4>
+                    <ul class="event-list">
+                        <li>Debugging Contest</li>
+                        <li>Pattern Hunters</li>
+                        <li>QuizTech Arena</li>
+                        <li>Code Predictor</li>
+                        <li>Emoji Decode </li>
+                        <li> Innovative X</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary);">🎨 Non-Technical Events</h4>
+                    <ul class="event-list">
+                        <li>Blind Walk</li>
+                        <li>Lucky Wheel  </li>
+                        <li>Ball Throw</li>
+                        <li>Balloon Battle</li>
+                         <li>Disco Room</li>
+                          <li>Tap The Treasure</li>
+                           <li>Balloon Burst With Gun </li>
+                            <li>Spoon Drink </li>
+                             <li>Find The Flag</li>
+                              <li>Rose Dedication </li>
+                               <li>Insta DP Contest</li>
+                                <li>Coin Balance</li>
+                                 <li>Dart Game</li>
+                                  <li>Set The Target</li>
+                                  <li>Pencil Art gallery  </li>
+                                  <li> Straw Rush</li>
+                                 
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p class="dev-tag">Designed & Developed By</p>
+            <p class="dev-name">SHAIK GOUSE KHAJA</p>
+        </footer>
+    </div>
+
+    <script>
+        /** --- Rainbow Neural Network Logic --- **/
+        const canvas = document.getElementById('neuralCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.speedY = (Math.random() - 0.5) * 0.8;
+                this.hue = Math.random() * 360;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.hue += 0.5;
+
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+
+            draw() {
+                ctx.fillStyle = `hsla(${this.hue}, 70%, 60%, 0.8)`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function createParticles() {
+            const count = (canvas.width * canvas.height) / 9000;
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function connectParticles() {
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        let opacity = 1 - (distance / 150);
+                        ctx.strokeStyle = `hsla(${particles[a].hue}, 70%, 60%, ${opacity * 0.2})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            initCanvas();
+            particles = [];
+            createParticles();
+        });
+
+        initCanvas();
+        createParticles();
+        animate();
+    </script>
+</body>
+</html>
